@@ -7,7 +7,7 @@
 
    /documents -----文档目录
 
-  /documents   ---->GitHub入门与实践
+​                           ---->GitHub入门与实践
 
 ​						  ----->代码持续集成，审核及测试方式
 
