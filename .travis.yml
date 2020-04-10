@@ -2,10 +2,8 @@ language: c
 
 notifications:
   	email:
-
-​			on_success: always
-
-​			on-failure: always 
+          on_success: always
+          on-failure: always 
 
 before_script:
 # travis has changed to 64-bit and we require 32-bit compatibility libraries
