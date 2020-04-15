@@ -1,4 +1,3 @@
-```dart
 language: cpp
 os:
   - linux
@@ -33,4 +32,3 @@ addons:
     build_command_prepend: "scons -c"
     build_command: "scons"
     branch_pattern: master
-```
