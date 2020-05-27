@@ -30,12 +30,11 @@ int main(void)
 
 //	SysInit();        //系统初始化       
     TaskInit();
-//	
 
     while(1)
     {	
 
-		
+	
 		rt_thread_mdelay(1000);
 		
     }

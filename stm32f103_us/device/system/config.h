@@ -79,7 +79,6 @@ typedef enum //定义消息枚举类型
 #include "adc11.h"
 #include "BspTimer.h"
 
-
 //----------------------------------------
 //全局变量定义,请使用EXT修饰
 EXT unsigned char g_Var;	

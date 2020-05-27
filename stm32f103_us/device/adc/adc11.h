@@ -3,7 +3,6 @@
  * @brief     : Header for adc11.c file.
 */
 
-
 #ifndef __ADC11_H__
 #define __ADC11_H__
 
@@ -16,7 +15,7 @@
 #if ADC1_EN == 1
 
 #define NbrOfChannel 4
-extern __IO uint16 ADCConvertedValue[NbrOfChannel] ;    //adc1四通道接收数据的数组
+extern __IO uint16 ADCConvertedValue[NbrOfChannel] ;
 
 
 extern ADC_HandleTypeDef hadc1;

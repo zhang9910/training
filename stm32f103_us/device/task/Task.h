@@ -1,9 +1,3 @@
-/**
- * @file      : Task.h
- * @brief     : Header for Task.c file.
-*/
-
-
 #ifndef __TASK_H__
 #define __TASK_H__
 

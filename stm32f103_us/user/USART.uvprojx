@@ -492,11 +492,6 @@
               <FileType>1</FileType>
               <FilePath>..\device\timer\BspTimer.c</FilePath>
             </File>
-            <File>
-              <FileName>BspDs18b20.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\device\ds18b20\BspDs18b20.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>

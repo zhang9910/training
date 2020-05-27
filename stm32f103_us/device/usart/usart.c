@@ -168,13 +168,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			{
 				if(aRxBuffer[0]!=0x0a)USART_RX_STA=0;//接收错误,重新开始
 				else USART_RX_STA|=0x8000;	//接收完成了 
-//				{
-//					USART_RX_STA|=0x8000;	//接收完成了 
-//					USART_RX_BUF[USART_RX_STA]='\0';
-//					rt_sem_release(usart2_recv_sem);//释放一个信号量，表示数据已接收;给出二值信号量 ，发送接收到新数据帧标志，供前台线程查询
-//				
-//				}
-				
+		
 			}
 			else //还没收到0X0D
 			{	

@@ -19,7 +19,6 @@
 "..\obj\chipinfo.o"
 "..\obj\adc11.o"
 "..\obj\bsptimer.o"
-"..\obj\bspds18b20.o"
 "..\obj\startup_stm32f103xe.o"
 "..\obj\clock.o"
 "..\obj\components.o"

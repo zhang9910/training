@@ -7,6 +7,7 @@
  ********************************************************
 */
 
+
 #include "config.h"
 #include "Task.h"
 
@@ -72,7 +73,7 @@ void TaskInit(void)
 	msg_mq = rt_mq_create("msg_mq",							//消息队列名字
 						   32,  									//消息的最大长度, bytes
 						   10,										//消息队列的最大容量(个数)
-						   RT_IPC_FLAG_FIFO			    //队列模式 FIFO
+						   RT_IPC_FLAG_FIFO			//队列模式 FIFO
 	                     );
 	if(msg_mq != RT_NULL)
 		rt_kprintf("消息队列key_mq创建成功\n\n");
@@ -108,7 +109,7 @@ void TaskInit(void)
 */
 
 /**
- *@brief      执行线程，灯的变化
+ *@brief      执行线程，灯0的变化
  *@retval     None
  */
 void led_thread_entry(void *parameter)
@@ -216,10 +217,9 @@ void led1_thread_entry(void *parameter)
 
 	while(1)
 	{
-	
 		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
-		rt_thread_delay(1000);
-	
+		rt_thread_mdelay(1000);
+
 	}
 }
 

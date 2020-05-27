@@ -5,8 +5,6 @@
  * @brief          : Project file name adc11.c
  * @details        : The file provides code for the configuration 
                       of the adc1.
- * @author         : weijianx
- * @email          : 3176184465@qq.com
  * @date           : 2020-05-27
  * @version        : V1.0
  ********************************************************
@@ -17,7 +15,7 @@
 
 #if ADC1_EN == 1
 
-__IO uint16 ADCConvertedValue[NbrOfChannel] = {0};
+__IO uint16 ADCConvertedValue[NbrOfChannel] = {0};   //接收adc数据的数组
 
 ADC_HandleTypeDef hadc1;         //ADC1句柄
 DMA_HandleTypeDef hdma_adc1;     //ADC1_DMA句柄
@@ -118,6 +116,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     hdma_adc1.Init.Priority = DMA_PRIORITY_HIGH;
     if (HAL_DMA_Init(&hdma_adc1) != HAL_OK)
     {
+
 //      Error_Handler();
     }
 
@@ -140,7 +139,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
 */
 static void ADCProcessSoftTimer_callback(void* parameter)
 {
-	HAL_ADC_Start_DMA(&hadc1, (uint32_t*)&ADCConvertedValue, 100);
+	HAL_ADC_Start_DMA(&hadc1, (uint32_t*)&ADCConvertedValue, NbrOfChannel);
 	printf("\r\n ADC1 CH10(PC0) value = %.2f V \r\n",(float)ADCConvertedValue[0]/4096 * 3.3);
 
 }
