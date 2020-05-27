@@ -30,6 +30,10 @@ void usart2_recv_thread_entry(void *parameter);//串口2接收处理入口函数
 void msg_process_thread_entry(void *parameter);//用户消息处理入口函数
 void adc_getVol_thread_entry(void *parameter);//ADC获取电压值
 void led1_thread_entry(void *parameter);
+void ll_thread_entry(void *parameter);
+void lll_thread_entry(void *parameter);
+void llll_thread_entry(void *parameter);
+void lllll_thread_entry(void *parameter);
 	
 	
 /*************************************************************************
@@ -38,13 +42,17 @@ void led1_thread_entry(void *parameter);
 */
 TaskStruct TaskThreads[] = {
 			{"ledThread", led_thread_entry,  RT_NULL,  256,  5, 10},
-			{"usart2_recv_thread", usart2_recv_thread_entry, 	RT_NULL, 512, 2, 	10 	},
-			{"msg_process_thread",  msg_process_thread_entry, RT_NULL, 512, 2,   10 },
-			{"adc_getVol_thread",adc_getVol_thread_entry, RT_NULL, 512, 2, 10},
+			{"usart2_recv_thread", usart2_recv_thread_entry, 	RT_NULL, 256, 2, 	10 	},
+			{"msg_process_thread",  msg_process_thread_entry, RT_NULL, 256, 2,   10 },
+			{"adc_getVol_thread",adc_getVol_thread_entry, RT_NULL, 256, 2, 10},
 			{"led1_thread", led1_thread_entry, RT_NULL, 256, 2, 10},  
+			{"ll_thread", ll_thread_entry, RT_NULL, 256, 2, 10},  
+			{"lll_thread", lll_thread_entry, RT_NULL, 256, 2, 10},  
+			{"llll_thread", llll_thread_entry, RT_NULL, 256, 2, 10},  
+			{"lllll_thread", lllll_thread_entry, RT_NULL, 256, 2, 10},  
 			
 			/*********************************************************/
-			//改变栈的大小，可改变线程数量；也可通过改变 rtconfig.h 中的 RT_MAIN_THREAD_STACK_SIZE 大小，来改变线程数量
+			//改变栈的大小，可改变线程数量；也可通过改变 rtconfig.h 中的 RT_MAIN_THREAD_STACK_SIZE 或 FINSH_THREAD_STACK_SIZE 大小，来改变线程数量，
 			//用户添加线程参数
 			//例如：{线程名字,线程入口函数,线程入口函数参数,线程栈大小,线程的优先级,线程时间片},
 			
@@ -201,7 +209,7 @@ void adc_getVol_thread_entry(void *parameter)
 	
 	while(1)
 	{
-		val = Get_Adc();
+//		val = Get_Adc();
 		rt_kprintf("the vol is %d mv\r\n", val);
 		rt_thread_mdelay(1000);
 	}
@@ -223,4 +231,39 @@ void led1_thread_entry(void *parameter)
 	}
 }
 
+void ll_thread_entry(void *parameter)
+{
+	while(1)
+	{
+		printf("1111\r\n");
+		rt_thread_delay(1000);
+	}
 
+}
+void lll_thread_entry(void *parameter)
+{
+	while(1)
+	{
+		printf("22221\r\n");
+		rt_thread_delay(1000);
+	}
+
+}
+void llll_thread_entry(void *parameter)
+{
+	while(1)
+	{
+		printf("33331\r\n");
+		rt_thread_delay(1000);
+	}
+
+}
+void lllll_thread_entry(void *parameter)
+{
+	while(1)
+	{
+		printf("44444\r\n");
+		rt_thread_delay(1000);
+	}
+
+}

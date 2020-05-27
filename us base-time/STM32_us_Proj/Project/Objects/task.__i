@@ -1,6 +1,0 @@
---c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\FWLIB\inc -I ..\Libraries\CMSIS -I ..\Source\Main -I ..\Source\Dev -I ..\Source\RT-Thread\components\finsh -I ..\Source\RT-Thread\include -I ..\Source\RT-Thread\include\libc
--I.\RTE\_Target_1
--ID:\keil_5\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
--ID:\keil_5\ARM\CMSIS\Include
--D__UVISION_VERSION="529" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER
--o .\objects\task.o --omf_browse .\objects\task.crf --depend .\objects\task.d "..\Source\Main\Task.c"

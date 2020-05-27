@@ -33,7 +33,7 @@ int main(void)
 
     while(1)
     {	
-
+		printf("main running\r\n");
 	
 		rt_thread_mdelay(1000);
 		

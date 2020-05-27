@@ -45,11 +45,11 @@ void SysInit(void)
 	LED_Init();							    //初始化LED	
 	KEY_Init();							    //初始化按键
 	Beep_Init();                            //初始化蜂鸣器
-	ADC_Init();                             //初始化ADC
+//	ADC_Init();                             //初始化ADC
 	EXTI_Init();                            //初始化中断
 	Tim2Init(72,1000);                      //中断周期为1ms,用于按键扫描
-	MX_ADC1_Init();
-	MX_DMA_Init();
+//	MX_ADC1_Init();
+//	MX_DMA_Init();
 
 	
 }

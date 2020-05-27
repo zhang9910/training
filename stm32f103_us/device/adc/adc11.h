@@ -15,7 +15,7 @@
 #if ADC1_EN == 1
 
 #define NbrOfChannel 4
-extern __IO uint16 ADCConvertedValue[NbrOfChannel] ;
+// uint32_t ADCConvertedValue[NbrOfChannel] ;
 
 
 extern ADC_HandleTypeDef hadc1;
@@ -24,7 +24,9 @@ extern ADC_HandleTypeDef hadc1;
 
 /* USER CODE END Private defines */
 
-void MX_ADC1_Init(void);
+//void AdcDMAInit(void);
+static void ADC_RegularChannelConfig(ADC_HandleTypeDef *AdcHandle, uint32_t Channel, uint32_t Rank, uint32_t SamplingTime);
+
 
 #endif
 
