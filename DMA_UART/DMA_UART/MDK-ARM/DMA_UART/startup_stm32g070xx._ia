@@ -1,0 +1,6 @@
+--cpu Cortex-M0+ -g --apcs=interwork --pd "__MICROLIB SETA 1"
+-I.\RTE\_DMA_UART
+-IC:\Users\zhangmeiling\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+-IC:\Users\zhangmeiling\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.2.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include
+--pd "__UVISION_VERSION SETA 531" --pd "_RTE_ SETA 1" --pd "STM32G070xx SETA 1" --pd "_RTE_ SETA 1"
+--list startup_stm32g070xx.lst --xref -o dma_uart\startup_stm32g070xx.o --depend dma_uart\startup_stm32g070xx.d "startup_stm32g070xx.s"
